@@ -1,0 +1,330 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: "Saira", sans-serif;
+  }
+  
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    min-height: 100vh;
+    background-color: #333333;
+    color: white;
+    line-height: 1.6;
+  }
+  
+  img {
+    display: block;
+    max-width: 100%;
+  }
+  
+  .site-header {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    background-color: rgba(51, 51, 51, 0.95);
+    backdrop-filter: blur(8px);
+  }
+  
+  .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 1rem 2rem;
+    gap: 2rem;
+  }
+  
+  .logo a {
+    color: white;
+    text-decoration: none;
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    font-weight: 600;
+    line-height: 1;
+  }
+  
+  .nav-links {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    flex-wrap: wrap;
+    gap: 1.25rem;
+    list-style: none;
+  }
+  
+  .nav-links a {
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+  }
+  
+  .nav-links a:hover,
+  .nav-links a:focus-visible, 
+  .contact-link a:hover,
+  .contact-link a:focus-visible {
+    color: #ada195;
+  }
+  
+  .section {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 5rem 2rem;
+    scroll-margin-top: 110px;
+  }
+  
+  .profile {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 3rem;
+    min-height: calc(100vh - 110px);
+  }
+  
+  .right,
+  .left {
+    flex: 1 1 0;
+  }
+  
+  .right h1 {
+    font-size: clamp(3rem, 9vw, 6.25rem);
+    line-height: 1.05;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+  }
+  
+  .right p {
+    max-width: 680px;
+    font-size: clamp(1rem, 1.8vw, 1.25rem);
+  }
+  
+  .left {
+    display: flex;
+    justify-content: flex-end;
+  }
+  
+  .left img {
+    width: min(100%, 500px);
+    max-height: 620px;
+    object-fit: cover;
+    mask-image: linear-gradient(to left, rgba(0, 0, 0, 1) 70%, rgba(0, 0, 0, 0));
+    -webkit-mask-image: linear-gradient(to left, rgba(0, 0, 0, 1) 70%, rgba(0, 0, 0, 0));
+  }
+  
+  .projects,
+  .skills,
+  .hobby {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+  }
+  
+  .projects h2,
+  .skills h2,
+  .hobby h2 {
+    font-size: clamp(2rem, 5vw, 3rem);
+    text-align: center;
+  }
+  
+  .project-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 2rem;
+    width: 100%;
+  }
+  
+  .project-item {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    border: 3px solid #848484;
+    padding: 2rem;
+    border-radius: 16px;
+    background-color: rgba(255, 255, 255, 0.03);
+  }
+  
+  .project-item h3 {
+    text-align: center;
+    font-size: 1.75rem;
+  }
+  
+  .project-item p {
+    text-align: justify;
+  }
+  
+  .project-item img {
+    width: 100%;
+    border-radius: 12px;
+    object-fit: contain;
+  }
+  
+  .project-item a {
+    align-self: flex-start;
+    color: white;
+    text-decoration: none;
+    background-color: #197935;
+    padding: 0.6rem 1rem;
+    border-radius: 8px;
+    font-weight: 600;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+  }
+  
+  .project-item a:hover,
+  .project-item a:focus-visible {
+    background-color: #14652c;
+    transform: translateY(-2px);
+  }
+  
+  .skill-container, .hobby-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 2rem;
+  }
+  
+  .skill-container img {
+    width: 90px;
+    height: 90px;
+    object-fit: contain;
+    padding: 1rem;
+    border-radius: 16px;
+    background-color: rgba(255, 255, 255, 0.08);
+  }
+  
+  .hobby-container img {
+    width: 256px;
+    height: 256px;
+    object-fit: contain;
+    padding: 1rem;
+    border-radius: 16px;
+    background-color: rgba(255, 255, 255, 0.08);
+  }
+  
+  .hobby p {
+    color: #d8d8d8;
+    text-align: center;
+  }
+  
+  footer {
+    background-color: #272727;
+    border-radius: 32px 32px 0px 0px;
+    display: flex;
+    flex-direction: row;
+    gap: 148px;
+    padding: 48px;
+  }
+  
+  .contact p {
+    font-weight: bold;
+    font-size: larger;
+  }
+  
+  .contact-link {
+    list-style: none;
+  }
+  
+  .contact-link a {
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+    font-size: 18px;
+  }
+  
+  .contact-link svg {
+    margin-right: 9px;
+    margin-top: 9px;
+  }
+
+  /* --- ANIMASI SCROLL REVEAL --- */
+  .hidden {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: all 0.8s ease-out;
+  }
+  
+  .show {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  
+  /* Efek delay pada grid supaya muncul beruntun */
+  .project-item {
+    transition: all 0.8s ease-out;
+  }
+  .project-item:nth-child(1) { transition-delay: 100ms; }
+  .project-item:nth-child(2) { transition-delay: 200ms; }
+  .project-item:nth-child(3) { transition-delay: 300ms; }
+  .project-item:nth-child(4) { transition-delay: 400ms; }
+
+  /* --- ANIMASI 3D TILT --- */
+  .tilt-effect {
+    transition: transform 0.1s ease, box-shadow 0.1s ease;
+    will-change: transform;
+    cursor: pointer;
+  }
+  
+  /* --- MEDIA QUERIES --- */
+  @media (max-width: 900px) {
+    .navbar {
+      align-items: flex-start;
+      flex-direction: column;
+    }
+  
+    .nav-links {
+      justify-content: flex-start;
+    }
+  
+    .profile {
+      flex-direction: column-reverse;
+      text-align: center;
+    }
+  
+    .right p {
+      margin: 0 auto;
+      text-align: left;
+    }
+  
+    .left {
+      justify-content: center;
+    }
+  
+    .left img {
+      width: min(100%, 360px);
+      mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1) 75%, rgba(0, 0, 0, 0));
+      -webkit-mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1) 75%, rgba(0, 0, 0, 0));
+    }
+  
+    .project-grid {
+      grid-template-columns: 1fr;
+    }
+
+    /* Perbaikan Mobile untuk Footer */
+    footer {
+        flex-direction: column;
+        gap: 40px;
+        padding: 2rem;
+    }
+  }
+  
+  @media (max-width: 520px) {
+    .navbar,
+    .section {
+      padding-left: 1rem;
+      padding-right: 1rem;
+    }
+  
+    .nav-links {
+      gap: 0.75rem;
+    }
+  
+    .project-item {
+      padding: 1.25rem;
+    }
+  }
