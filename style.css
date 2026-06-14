@@ -188,31 +188,61 @@
     gap: 2rem;
   }
 
-  .hobby-slider{
-      overflow: hidden;
-      width: 100%;
-      padding: 2rem 0;
-      position: relative;
-  }
-  .hobby-track {
-      display:flex;
-      width:max-content;
-      animation: scroll 25s linear infinite;
-  }
-
-   .hobby-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 2rem;
-    padding-right: 2rem;
-  }
-
-  .hobby-track:hover {
-      animation-plai-state: paused;
-  }
+  /* 1. The outer window that crops the overflowing cards */
+.hobby-slider {
+  overflow: hidden;
+  width: 100%;
+  position: relative;
+  padding: 2rem 0; /* Gives extra vertical breathing room for your .tilt-effect */
   
+  /* Adds a smooth fade-out on the left and right edges */
+  mask-image: linear-gradient(
+    to right,
+    transparent,
+    black 15%,
+    black 85%,
+    transparent
+  );
+}
+
+/* 2. The endless moving track containing both containers */
+.hobby-track {
+  display: flex;
+  width: max-content;
+  animation: infiniteScroll 25s linear infinite;
+}
+
+/* Optional: Pauses the scrolling when a user hovers over a hobby card */
+.hobby-track:hover {
+  animation-play-state: paused;
+}
+
+/* 3. Your updated Hobby Container */
+.hobby-container {
+  display: flex;
+  align-items: center;
+  gap: 2rem;           /* Your original spacing */
+  padding-right: 2rem; /* CRITICAL: Matches the gap to keep the loop seamless */
+}
+
+/* 4. Individual Image/Card styling */
+.tilt-effect {
+  width: 160px;        /* Set whatever width fits your design best */
+  height: 160px;       /* Set whatever height fits your design best */
+  object-fit: cover;
+  border-radius: 1rem;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* 5. The Perfect 50% Loop Animation */
+@keyframes infiniteScroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%); /* Shifts exactly one full .hobby-container width left */
+  }
+}
   .skill-container img {
     width: 90px;
     height: 90px;
@@ -266,15 +296,7 @@
     margin-right: 9px;
     margin-top: 9px;
   }
-  @keyframes scroll {
-      0%{
-          transform: translateX(0);
-      }
-      100%{
-          transform: translateX(-50%);
-      }
-  }
-
+ 
 
   /* --- ANIMASI SCROLL REVEAL --- */
   .hidden {
