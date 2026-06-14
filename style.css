@@ -180,7 +180,7 @@
     transform: translateY(-2px);
   }
   
-  .skill-container,{
+  .skill-container{
     display: flex;
     justify-content: center;
     align-items: center;
@@ -188,22 +188,22 @@
     gap: 2rem;
   }
 
-  /* 1. The outer window that crops the overflowing cards */
-.hobby-slider {
-  overflow: hidden;
-  width: 100%;
-  position: relative;
-  padding: 2rem 0; /* Gives extra vertical breathing room for your .tilt-effect */
+ 
+  .hobby-slider {
+   overflow: hidden;
+   width: 100%;
+   position: relative;
+   padding: 2rem 0; /* Gives extra vertical breathing room for your .tilt-effect */
   
   /* Adds a smooth fade-out on the left and right edges */
-  mask-image: linear-gradient(
-    to right,
-    transparent,
-    black 15%,
-    black 85%,
-    transparent
-  );
-}
+   mask-image: linear-gradient(
+     to right,
+     transparent,
+     black 15%,
+     black 85%,
+     transparent
+    );
+  }
 
 /* 2. The endless moving track containing both containers */
 .hobby-track {
