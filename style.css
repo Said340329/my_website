@@ -180,7 +180,7 @@
     transform: translateY(-2px);
   }
   
-  .skill-container{
+  .skill-container, .hobby-container{
     display: flex;
     justify-content: center;
     align-items: center;
