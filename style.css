@@ -188,12 +188,29 @@
     gap: 2rem;
   }
 
+  .hobby-slider{
+      overflow: hidden;
+      width: 100%;
+      padding: 2rem 0;
+      position: relative;
+  }
+  .hobby-track {
+      display:flex;
+      width:max-content;
+      animation: scroll 25s linear infinite;
+  }
+
    .hobby-container {
     display: flex;
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
     gap: 2rem;
+    padding-right: 2rem;
+  }
+
+  .hobby-track:hover {
+      animation-plai-state: paused;
   }
   
   .skill-container img {
@@ -249,6 +266,15 @@
     margin-right: 9px;
     margin-top: 9px;
   }
+  @keyframes scroll {
+      0%{
+          transform: translateX(0);
+      }
+      100%{
+          transform: translateX(-50%);
+      }
+  }
+
 
   /* --- ANIMASI SCROLL REVEAL --- */
   .hidden {
